@@ -1,0 +1,20 @@
+{
+    "name": "basic-post-grunt",
+    "version": "0.0.1",
+    "description": "Showing the power of grunt",
+    "author": "Jonathan A. Epstein",
+    "license": "",
+    "private": true,
+    "devDependencies": {
+        "grunt": "0.4.5",
+        "grunt-contrib-concat": "0.4.0",
+        "grunt-contrib-jshint": "0.10.0",
+        "grunt-contrib-watch": "0.6.1",
+        "grunt-contrib-uglify": "0.4.0",
+        "grunt-contrib-cssmin": "0.9.0",
+        "grunt-contrib-clean": "0.5.0",
+        "grunt-contrib-copy": "0.5.0",
+        "grunt-usemin": "2.1.1",
+        "load-grunt-tasks": "0.4.0"
+    }
+}
