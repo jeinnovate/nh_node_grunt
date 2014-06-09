@@ -94,8 +94,11 @@ module.exports = function (grunt) {
 
     /** register tasks **/
 
-        // default task
+    // default task
     grunt.registerTask('default', []);
+
+    // create a web server to host content
+    grunt.registerTask('serve', ['connect']);
 
     // use before a release
     grunt.registerTask('release', ['useminPrepare', 'clean', 'copy', 'concat', 'uglify', 'usemin']);

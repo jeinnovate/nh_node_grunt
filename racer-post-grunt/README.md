@@ -14,3 +14,4 @@ Running
 
 `grunt release` - Make a release build.
 `grunt dev` - Auto watch the files and reload on change.
+`grunt serve` - Host the content.

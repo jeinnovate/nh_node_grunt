@@ -75,17 +75,13 @@ node --version
 
 If you do not have Node, you can install it by going to [http://nodejs.org/](http://nodejs.org/) and clicking 'Install'.
 
-Check your install with
-
-```
-node --version
-```
-
 Now install npm global dependencies with
 
 ```
 npm install -g grunt-cli
 ```
+
+(`sudo` might be needed)
 
 Install the live reload browser extension (optional)
 
@@ -131,6 +127,12 @@ Create a version for release
 
 ```
 grunt release
+```
+
+Serve Content
+
+```
+grunt serve
 ```
 
 ---

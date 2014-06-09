@@ -6,6 +6,7 @@ Setup
 -----
 
 ```bash
+gem install reveal-ck
 npm install
 ```
 
