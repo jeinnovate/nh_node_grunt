@@ -10,11 +10,23 @@ module.exports = function (grunt) {
 
         // serve the presentation
         connect: {
-            server: {
+            watch: {
                 options: {
                     port: '<%= port %>',
                     base: '',
                     livereload: true,
+                    hostname: '0.0.0.0',
+                    open: {
+                        target: 'http://localhost:<%= port %>'
+                    }
+                }
+            },
+            standalone: {
+                options: {
+                    port: '<%= port %>',
+                    base: '',
+                    livereload: true,
+                    keepalive: true,
                     hostname: '0.0.0.0',
                     open: {
                         target: 'http://localhost:<%= port %>'
@@ -98,11 +110,11 @@ module.exports = function (grunt) {
     grunt.registerTask('default', []);
 
     // create a web server to host content
-    grunt.registerTask('serve', ['connect']);
+    grunt.registerTask('serve', ['connect:standalone']);
 
     // use before a release
     grunt.registerTask('release', ['useminPrepare', 'clean', 'copy', 'concat', 'uglify', 'usemin']);
 
     // kick off the default task then watch
-    grunt.registerTask('dev', ['default', 'connect', 'watch']);
+    grunt.registerTask('dev', ['default', 'connect:watch', 'watch']);
 };

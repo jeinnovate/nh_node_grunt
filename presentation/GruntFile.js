@@ -17,11 +17,23 @@ module.exports = function (grunt) {
 
         // serve the presentation
         connect: {
-            server: {
+            watch: {
                 options: {
                     port: '<%= port %>',
                     base: 'slides',
                     livereload: true,
+                    hostname: '0.0.0.0',
+                    open: {
+                        target: 'http://localhost:<%= port %>'
+                    }
+                }
+            },
+            standalone: {
+                options: {
+                    port: '<%= port %>',
+                    base: 'slides',
+                    livereload: true,
+                    keepalive: true,
                     hostname: '0.0.0.0',
                     open: {
                         target: 'http://localhost:<%= port %>'
@@ -68,8 +80,8 @@ module.exports = function (grunt) {
     grunt.registerTask('slides', [ 'exec:generate' ]);
 
     // serve the presentation
-    grunt.registerTask('serve', [ 'connect' ]);
+    grunt.registerTask('serve', [ 'connect:standalone' ]);
 
     // continuous development
-    grunt.registerTask('dev', [ 'slides', 'serve', 'watch' ]);
+    grunt.registerTask('dev', [ 'slides', 'connect:watch', 'watch' ]);
 };
