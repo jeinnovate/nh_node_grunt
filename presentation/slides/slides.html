@@ -52,7 +52,7 @@
 <ul>
 <li>Improving code quality</li>
 <li>Optimizing assets</li>
-<li>Running code testing</li>
+<li>Code testing</li>
 <li>Continuous delivery automation</li>
 <li>Serving assets</li>
 <li>Automating development</li>
@@ -64,7 +64,7 @@
 <h1>Under the covers</h1>
 
 <ul>
-<li>It is Node running JS</li>
+<li>Node running JS</li>
 <li>Open source</li>
 <li>Uses modules so it can be extended + customized</li>
 </ul>
@@ -97,14 +97,19 @@
 <pre><code>node --version
 </code></pre>
 
-<p>If you do not have Node, you can install it by going to http://nodejs.org/ and clicking &#39;Install&#39;.</p>
+<p>If you do not have Node, you can install it by going to <a href="http://nodejs.org/">http://nodejs.org/</a> and clicking &#39;Install&#39;.</p>
 
-<h1>check with</h1>
+<p>Check your install with</p>
 
-<p>node --version
-```</p>
+<pre><code>node --version
+</code></pre>
 
-<p>Now install npm global dependencies with <code>npm install -g grunt-cli</code></p>
+<p>Now install npm global dependencies with</p>
+
+<pre><code>npm install -g grunt-cli
+</code></pre>
+
+<p>Install the live reload browser extension (optional)</p>
 
 </section>
 <section>
@@ -123,7 +128,10 @@ cd nh_node_grunt
 
 <p>Then head over to <a href="./basic-post-grunt">basic-post-grunt</a></p>
 
-<p>To pull down the npm dependencies</p>
+<p>To pull down the npm dependencies, run</p>
+
+<pre><code>npm install
+</code></pre>
 
 <p>You can see all tasks and check your setup with</p>
 
@@ -137,12 +145,14 @@ cd nh_node_grunt
 
 <h2>Run tasks</h2>
 
-<p>Run</p>
+<p>Development mode with auto reload</p>
 
 <pre><code>grunt dev
 </code></pre>
 
-<pre><code>grunt dev
+<p>Create a version for release</p>
+
+<pre><code>grunt release
 </code></pre>
 
 </section>
@@ -184,5 +194,24 @@ I already added <code>cssmin</code> to the package.json</li>
 <h1>Yeoman Mobile Generator task 1:</h1>
 
 <h2>Run some Grunt commands</h2>
+
+<p>Setup</p>
+
+<pre><code class="bash">cd mobile-example
+gem install compass # if this fails, pair up and install ruby later :)
+npm install
+</code></pre>
+
+<p>Running</p>
+
+<p>Create a build of the project</p>
+
+<pre><code>grunt build
+</code></pre>
+
+<p>Serve the files</p>
+
+<pre><code>grunt serve
+</code></pre>
 
 </section>

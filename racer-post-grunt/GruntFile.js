@@ -68,31 +68,9 @@ module.exports = function (grunt) {
             }
         },
 
-        // take out the livereload block for the release
-        replace: {
-            livereload: {
-                src: [ 'dist/index.html' ],
-                dest: 'dist/',
-                replacements: [
-                    {
-                        from: '<script src="http://localhost:<%= port %>/livereload.js"></script>',
-                        to: '<!-- blank -->'
-                    }
-                ]
-            }
-        },
-
-        // minify the css
-        cssmin: {
-            options: {
-                report: 'min'
-            },
-            css: {
-                files: {
-                    '<%= distDir %>/main.css': '<%= distDir %>/main.css'
-                }
-            }
-        },
+        ////////////////////////////////////////////
+        // Insert cssmin here
+        ////////////////////////////////////////////
 
         // allow to serve different files for development and release
         useminPrepare: {
@@ -104,11 +82,12 @@ module.exports = function (grunt) {
 
         // watch files and run tasks on change
         watch: {
-            livereload: {
-                options: {
-                    livereload: true
-                },
-                files: [ 'images/**', '*.{html,css,js}']
+            options: {
+                livereload: true
+            },
+            all: {
+                files: [ 'images/**', '*.{html,css,js}'],
+                tasks: []
             }
         }
     });
@@ -119,7 +98,7 @@ module.exports = function (grunt) {
     grunt.registerTask('default', []);
 
     // use before a release
-    grunt.registerTask('release', ['useminPrepare', 'clean', 'copy', 'replace:livereload', 'concat', 'uglify', 'cssmin', 'usemin']);
+    grunt.registerTask('release', ['useminPrepare', 'clean', 'copy', 'concat', 'uglify', 'usemin']);
 
     // kick off the default task then watch
     grunt.registerTask('dev', ['default', 'connect', 'watch']);

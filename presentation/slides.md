@@ -38,7 +38,7 @@
 
 - Improving code quality
 - Optimizing assets
-- Running code testing
+- Code testing
 - Continuous delivery automation
 - Serving assets
 - Automating development
@@ -46,7 +46,7 @@
 ---
 
 # Under the covers
-- It is Node running JS
+- Node running JS
 - Open source
 - Uses modules so it can be extended + customized
 
@@ -59,7 +59,6 @@
 
 # Lab time
 ![Grunt](./images/lab.jpg)
-
 
 ---
 
@@ -74,13 +73,21 @@ You can check with
 node --version
 ```
 
-If you do not have Node, you can install it by going to http://nodejs.org/ and clicking 'Install'.
+If you do not have Node, you can install it by going to [http://nodejs.org/](http://nodejs.org/) and clicking 'Install'.
 
-# check with
+Check your install with
+
+```
 node --version
 ```
 
-Now install npm global dependencies with `npm install -g grunt-cli`
+Now install npm global dependencies with
+
+```
+npm install -g grunt-cli
+```
+
+Install the live reload browser extension (optional)
 
 ---
 
@@ -97,7 +104,11 @@ Go to [basic-pre-grunt](./basic-pre-grunt) to see the project pre Grunt.
 
 Then head over to [basic-post-grunt](./basic-post-grunt)
 
-To pull down the npm dependencies
+To pull down the npm dependencies, run
+
+```
+npm install
+```
 
 You can see all tasks and check your setup with
 
@@ -110,14 +121,16 @@ grunt --help
 # Racer task 3:
 ## Run tasks
 
-Run
+Development mode with auto reload
 
 ```
 grunt dev
 ```
 
+Create a version for release
+
 ```
-grunt dev
+grunt release
 ```
 
 ---
@@ -152,3 +165,25 @@ The final `GruntFile.js` is called [gruntFile.js.final](./gruntFile.js.final)
 
 # Yeoman Mobile Generator task 1:
 ## Run some Grunt commands
+
+Setup
+
+```bash
+cd mobile-example
+gem install compass # if this fails, pair up and install ruby later :)
+npm install
+```
+
+Running
+
+Create a build of the project
+
+```
+grunt build
+```
+
+Serve the files
+
+```
+grunt serve
+```

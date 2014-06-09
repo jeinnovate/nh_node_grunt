@@ -24,3 +24,4 @@ If you do not have Node, you can install it by going to http://nodejs.org/ and c
 Post Node setup
 ---------------
 1. Install npm global dependencies with `npm install -g grunt-cli`
+1. Install live reload browser extension at http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-
