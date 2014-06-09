@@ -12,6 +12,6 @@ npm install
 Running
 -------
 
-```bash
-grunt dev
-```
+`grunt dev` - Auto generate the slides, serve the presentation, and refresh the presentation on change.
+`grunt slides` - Generates the slides.
+`grunt serve` - Act as a web server to host the presentation.
