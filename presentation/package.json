@@ -1,0 +1,19 @@
+{
+    "name": "nh_node_grunt",
+    "version": "0.0.0",
+    "description": "Presentation for NH Node",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jinnovate/nh_node_grunt.git"
+    },
+    "author": "Jonathan A. Epstein",
+    "license": "",
+    "homepage": "https://github.com/jinnovate/nh_node_grunt",
+    "devDependencies": {
+        "load-grunt-tasks": "0.4.0",
+        "grunt": "0.4.5",
+        "grunt-contrib-watch": "0.6.1",
+        "grunt-contrib-connect": "0.7.1",
+        "grunt-exec": "0.4.5"
+    }
+}
