@@ -2,11 +2,19 @@
 .reveal .slides p {
     text-align: left;
 }
+
+.center {
+    text-align: center !important;
+}
 </style>
 # Grunt
-![Grunt](./images/grunt.svg)
+<div class="center">
+    <img src="./images/grunt.svg" alt="Grunt">
+</div>
 ## Jonathan A. Epstein
-<a href="http://gruntjs.com/"><img src="https://cdn.gruntjs.com/builtwith.png" alt="Built with Grunt"></a>
+<div class="center">
+    <a href="http://gruntjs.com/"><img src="https://cdn.gruntjs.com/builtwith.png" alt="Built with Grunt"></a>
+</div>
 
 ---
 
@@ -58,11 +66,32 @@
 # Racer task 1:
 ## Get Node and Grunt setup
 
+You need `Node` > 0.10.20
+
+You can check with
+
+```
+node --version
+```
+
+If you do not have Node, you can install it by going to http://nodejs.org/ and clicking 'Install'.
+
+# check with
+node --version
+```
+
+Now install npm global dependencies with `npm install -g grunt-cli`
 
 ---
 
 # Racer task 2:
 ## Get the racer project setup
+Get the project via
+
+```
+git clone https://github.com/jinnovate/nh_node_grunt.git
+cd nh_node_grunt
+```
 
 Go to [basic-pre-grunt](./basic-pre-grunt) to see the project pre Grunt.
 

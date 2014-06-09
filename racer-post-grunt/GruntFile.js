@@ -5,9 +5,7 @@ module.exports = function (grunt) {
     /** set up config **/
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-
         distDir: 'dist',
-
         port: 9020,
 
         // serve the presentation
@@ -15,7 +13,7 @@ module.exports = function (grunt) {
             server: {
                 options: {
                     port: '<%= port %>',
-                    base: 'slides',
+                    base: '',
                     livereload: true,
                     hostname: '0.0.0.0',
                     open: {
@@ -25,6 +23,7 @@ module.exports = function (grunt) {
             }
         },
 
+        // copy the files to the dist version
         copy: {
             statics: {
                 files: {
@@ -38,13 +37,14 @@ module.exports = function (grunt) {
             }
         },
 
+        // clean the dist directory
         clean: {
             src: [
                 '<%= distDir %>/'
             ]
         },
 
-
+        // concat the files
         concat: {
             js: {
                 src: 'js/*.js',
@@ -56,7 +56,7 @@ module.exports = function (grunt) {
             }
         },
 
-
+        // minify the js
         uglify: {
             options: {
                 report: 'min'
@@ -68,6 +68,21 @@ module.exports = function (grunt) {
             }
         },
 
+        // take out the livereload block for the release
+        replace: {
+            livereload: {
+                src: [ 'dist/index.html' ],
+                dest: 'dist/',
+                replacements: [
+                    {
+                        from: '<script src="http://localhost:<%= port %>/livereload.js"></script>',
+                        to: '<!-- blank -->'
+                    }
+                ]
+            }
+        },
+
+        // minify the css
         cssmin: {
             options: {
                 report: 'min'
@@ -85,6 +100,16 @@ module.exports = function (grunt) {
         },
         usemin: {
             html: '<%= distDir %>/index.html'
+        },
+
+        // watch files and run tasks on change
+        watch: {
+            livereload: {
+                options: {
+                    livereload: true
+                },
+                files: [ 'images/**', '*.{html,css,js}']
+            }
         }
     });
 
@@ -94,8 +119,8 @@ module.exports = function (grunt) {
     grunt.registerTask('default', []);
 
     // use before a release
-    grunt.registerTask('release', ['useminPrepare', 'clean', 'copy', 'concat', 'uglify', 'cssmin', 'usemin']);
+    grunt.registerTask('release', ['useminPrepare', 'clean', 'copy', 'replace:livereload', 'concat', 'uglify', 'cssmin', 'usemin']);
 
     // kick off the default task then watch
-    grunt.registerTask('monitor', ['default', 'connect', 'watch']);
+    grunt.registerTask('dev', ['default', 'connect', 'watch']);
 };

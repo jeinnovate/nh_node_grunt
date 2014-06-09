@@ -12,12 +12,5 @@ npm install
 Running
 -------
 
-Making a release build
-```bash
-grunt release
-```
-
-Development mode
-```bash
-grunt release
-```
+`grunt release` - Make a release build.
+`grunt dev` - Auto watch the files and reload on change.
