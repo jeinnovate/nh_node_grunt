@@ -2,7 +2,9 @@
 Racer Post Grunt
 ================
 
-Run
+Setup
+-----
+
 ```bash
 npm install
 ```
