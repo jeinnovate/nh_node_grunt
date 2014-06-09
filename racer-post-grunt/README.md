@@ -8,3 +8,16 @@ Setup
 ```bash
 npm install
 ```
+
+Running
+-------
+
+Making a release build
+```bash
+grunt release
+```
+
+Development mode
+```bash
+grunt release
+```

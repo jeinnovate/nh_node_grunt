@@ -1,7 +1,13 @@
 <section>
+<style type="text/css">
+.reveal .slides p {
+    text-align: left;
+}
+</style>
+
 <h1>Grunt</h1>
 
-<p><img src="images/grunt.svg" alt="Grunt"></p>
+<p><img src="./images/grunt.svg" alt="Grunt"></p>
 
 <h2>Jonathan A. Epstein</h2>
 
@@ -28,7 +34,7 @@
 
 <h3>First Grunt example:</h3>
 
-<h1>NH Node Presentation!</h1>
+<h1>This Presentation!</h1>
 
 </section>
 <section>
@@ -67,24 +73,39 @@
 
 <h1>Lab time</h1>
 
-<p><img src="images/lab.jpg" alt="Grunt"></p>
+<p><img src="./images/lab.jpg" alt="Grunt"></p>
 
 </section>
 <section>
 
-<h1>Lab part 1:</h1>
+<h1>Racer task 1:</h1>
 
-<h2>Run tasks</h2>
+<h2>Get Node and Grunt setup</h2>
 
-<p>Go to <a href="./basic-pre-grunt">basic-pre-grunt</a> first as a baseline</p>
+</section>
+<section>
 
-<p>Then head over to
-<a href="./basic-post-grunt">basic-post-grunt</a></p>
+<h1>Racer task 2:</h1>
+
+<h2>Get the racer project setup</h2>
+
+<p>Go to <a href="./basic-pre-grunt">basic-pre-grunt</a> to see the project pre Grunt.</p>
+
+<p>Then head over to <a href="./basic-post-grunt">basic-post-grunt</a></p>
+
+<p>To pull down the npm dependencies</p>
 
 <p>You can see all tasks and check your setup with</p>
 
 <pre><code>grunt --help
 </code></pre>
+
+</section>
+<section>
+
+<h1>Racer task 3:</h1>
+
+<h2>Run tasks</h2>
 
 <p>Run</p>
 
@@ -97,23 +118,41 @@
 </section>
 <section>
 
-<h1>Lab part 2:</h1>
+<h1>Racer task 4:</h1>
 
 <h2>Add a new task</h2>
 
-<p>Let&#39;s minify the css
+<ol>
+<li>Let&#39;s minify the css
 <a href="https://github.com/gruntjs/grunt-contrib-cssmin">grunt-contrib-cssmin</a>
-I already added <code>cssmin</code> to the package.json</p>
+I already added <code>cssmin</code> to the package.json</li>
+</ol>
 
-<pre><code>
+<pre><code class="javascript">cssmin: {
+    options: {
+        report: &#39;min&#39;
+    },
+    css: {
+        files: {
+            &#39;&lt;%= distDir %&gt;/main.css&#39;: &#39;&lt;%= distDir %&gt;/main.css&#39;
+        }
+    }
+},
 </code></pre>
 
-<p>Add it to the task named <code>release</code> after <code>uglify</code></p>
+<ol>
+<li>Now add it to <code>release</code> task</li>
+</ol>
 
-<p>If you are having problems:</p>
+<p><strong>If you are having problems:</strong></p>
 
-<ul>
-<li>the final <code>GruntFile.js</code> is called <a href="./gruntFile.js.final">gruntFile.js.final</a></li>
-</ul>
+<p>The final <code>GruntFile.js</code> is called <a href="./gruntFile.js.final">gruntFile.js.final</a></p>
+
+</section>
+<section>
+
+<h1>Yeoman Mobile Generator task 1:</h1>
+
+<h2>Run some Grunt commands</h2>
 
 </section>

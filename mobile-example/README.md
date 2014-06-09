@@ -6,5 +6,14 @@ Setup
 -----
 
 ```bash
+gem install compass
 npm install
+```
+
+Running
+-------
+
+```bash
+grunt build
+grunt serve
 ```
