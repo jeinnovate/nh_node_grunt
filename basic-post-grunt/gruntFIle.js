@@ -8,6 +8,23 @@ module.exports = function (grunt) {
 
         distDir: 'dist',
 
+        port: 9020,
+
+        // serve the presentation
+        connect: {
+            server: {
+                options: {
+                    port: '<%= port %>',
+                    base: 'slides',
+                    livereload: true,
+                    hostname: '0.0.0.0',
+                    open: {
+                        target: 'http://localhost:<%= port %>'
+                    }
+                }
+            }
+        },
+
         copy: {
             statics: {
                 files: {
@@ -80,5 +97,5 @@ module.exports = function (grunt) {
     grunt.registerTask('release', ['useminPrepare', 'clean', 'copy', 'concat', 'uglify', 'cssmin', 'usemin']);
 
     // kick off the default task then watch
-    grunt.registerTask('monitor', ['default', 'watch']);
+    grunt.registerTask('monitor', ['default', 'connect', 'watch']);
 };
